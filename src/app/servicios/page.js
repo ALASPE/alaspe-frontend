@@ -1,3 +1,11 @@
-export default function ServiciosPage(){
-    return <h1>Servicios</h1>
+import Image from "next/image";
+import Navbar from "./../components/navbar";
+
+export default function Home() {
+  return (
+    <div>
+      <Navbar/>
+      Servicios
+    </div>
+  );
 }

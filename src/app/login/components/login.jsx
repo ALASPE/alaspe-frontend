@@ -42,11 +42,10 @@ export default function Login() {
         <h1 className='flex justify-center pt-5 text-xl'>Acceso a Intranet</h1>
         <form className="flex flex-col px-20 pt-5" onSubmit={handleSubmit}>
           <input
-            type="number"
             id="code"
             value={code}
             onChange={(event) => setCode(event.target.value)}
-            className="w-full bg-white py-3 pr-40 pl-5 rounded"
+            className="w-full bg-white py-3 pr-40 pl-5 rounded text-gray-500"
             placeholder="Número de CIP / NSA"
           />
           <input
@@ -54,7 +53,7 @@ export default function Login() {
             id="password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
-            className="bg-white mt-4 py-3 pr-40 pl-5 rounded"
+            className="bg-white mt-4 py-3 pr-40 pl-5 rounded text-gray-500"
             placeholder="Contraseña"
           />
           <p className="flex justify-end mt-3 mb-10">¿Olvidaste tu contraseña?</p>
