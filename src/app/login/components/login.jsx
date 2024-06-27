@@ -33,7 +33,7 @@ export default function Login() {
     <div className="bg-[#00AFA0] h-screen flex justify-center items-center text-white flex-col">
       <div className="flex flex-col justify-center items-center p-4">
         <Image
-        src="/logo.png"
+        src="/logo_blanco.png"
         width={300}
         height={800}
         alt="Logo Alaspe"
