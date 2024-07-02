@@ -1,9 +1,7 @@
-export default function Footer(){
+export default function App(){
     return(
-        <>
         <div>
-            HOLS
+            <h1>Aquí va el footer</h1>
         </div>
-        </>
     );
 }

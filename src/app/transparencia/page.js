@@ -1,10 +1,14 @@
 import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
 
-export default function Home() {
+export default function Transparencia() {
   return (
-    <div>
+    <>
       <Navbar/>
-      Transparencia
-    </div>
+      <div>
+        Transparencia
+      </div>
+      <Footer/>
+    </>
   );
 }

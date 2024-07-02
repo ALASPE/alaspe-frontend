@@ -1,10 +1,14 @@
 import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
 
-export default function Home() {
+export default function Noticias() {
   return (
-    <div>
+    <>
       <Navbar/>
-      Noticias
-    </div>
+      <div>
+        Noticias
+      </div>
+      <Footer/>
+    </>
   );
 }

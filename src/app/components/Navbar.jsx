@@ -14,7 +14,7 @@ export default function App() {
 
   return (
     <>
-    <div>
+    <div className="">
       <div>
         <ul className="hidden lg:flex flex-row justify-between px-20 bg-[#00afa0] pt-2 pb-1 gap-2">
           <li>Accede a un préstamo a sola firma y podrás realizar tu proyecto</li>
@@ -42,21 +42,21 @@ export default function App() {
                 <Link href="/servicios" className="transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-300">Ayuda Digital</Link>
             </ul>
             <div className="flex lg:hidden">
-            <NavContainer>
-        <div className={`links ${clicked ? 'active' : ''}`}>
-          <Link onClick={handleClick} href="/servicios">Servicios</Link>
-          <Link onClick={handleClick} href="/promociones">Promociones</Link>
-          <Link onClick={handleClick} href="/noticias">Noticias</Link>
-          <Link onClick={handleClick} href="#transparencia">Transparencia</Link>
-          <Link onClick={handleClick} href="/servicios">Ayuda Digital</Link>
-          <Link onClick={handleClick} href="/login">Iniciar Sesión</Link>
-          <Link onClick={handleClick} href="/login">Quiero ser socio</Link>
-        </div>
-        <div className='burguer'>
-          <BurguerButton clicked={clicked} handleClick={handleClick} />
-        </div>
-        <BgDiv className={`initial ${clicked ? ' active' : ''}`}></BgDiv>
-      </NavContainer>
+              <NavContainer>
+                <div className={`links ${clicked ? 'active' : ''}`}>
+                  <Link onClick={handleClick} href="/servicios">Servicios</Link>
+                  <Link onClick={handleClick} href="/promociones">Promociones</Link>
+                  <Link onClick={handleClick} href="/noticias">Noticias</Link>
+                  <Link onClick={handleClick} href="/transparencia">Transparencia</Link>
+                  <Link onClick={handleClick} href="/servicios">Ayuda Digital</Link>
+                  <Link onClick={handleClick} href="/login">Iniciar Sesión</Link>
+                  <Link onClick={handleClick} href="/login">Quiero ser socio</Link>
+                </div>
+                <div className='burguer'>
+                  <BurguerButton clicked={clicked} handleClick={handleClick} />
+                </div>
+                <BgDiv className={`initial ${clicked ? ' active' : ''}`}></BgDiv>
+              </NavContainer>
             </div>
           </div>
           <div className="pt-2">
@@ -129,7 +129,7 @@ const NavContainer = styled.nav`
     position: absolute;
     margin-left: auto;
     margin-right: auto;
-    top: 30%;
+    top: 20%;
     left: 0;
     right: 0;
     text-align: center;
