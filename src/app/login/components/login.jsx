@@ -2,34 +2,46 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function Login() {
   const [DNI, setDNI] = useState('');
   const [Password, setPassword] = useState('');
   const [message, setMessage] = useState('');
-  const [link, setLink] = useState('');
+  const router = useRouter();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const userData = { code, password };
-    fetch('http://localhost:5566', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(userData),
-    })
-      .then(response => response.json())
-      .then(data => {
-        if (data.valid) {
-          setMessage('Usuario válido');
-        } 
-        else {
-          setMessage('Usuario no Válido');
-        }
-      })
-      .catch(error => {
-        setMessage('Error al iniciar sesión, revise su conexión de internet');
+    if (!DNI || !Password) {
+      setMessage('Por favor, complete ambos campos');
+      return;
+    }
+
+    const userData = { DNI, Password };
+
+    try {
+      const response = await fetch('http://localhost:4000/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(userData),
       });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        setMessage(errorData.message || 'Error al iniciar sesión');
+        return;
+      }
+
+      const data = await response.json();
+      if (data.message === 'Inicio de sesión exitoso') {
+        setMessage('Usuario válido');
+        router.push(data.redirectUrl);
+      } else {
+        setMessage(data.message || 'Usuario no válido');
+      }
+    } catch (error) {
+      setMessage('Error al iniciar sesión, revise su conexión de internet');
+    }
   };
 
   return (
@@ -62,11 +74,9 @@ export default function Login() {
             required
           />
           <p className="flex justify-end mt-3 mb-10">¿Olvidaste tu contraseña?</p>
-          <Link>
-            <button className="bg-white hover:bg-sky-200 active:bg-white focus:outline-none focus:ring focus:ring-white-300 rounded py-2 text-[#00AFA0]" type="submit">
-              Iniciar sesión
-            </button>
-          </Link>
+          <button className="bg-white hover:bg-sky-200 active:bg-white focus:outline-none focus:ring focus:ring-white-300 rounded py-2 text-[#00AFA0]" type="submit">
+            Iniciar sesión
+          </button>
           <p className="mt-3 mb-5 text-sm">{message}</p>
         </form>
       </div>
