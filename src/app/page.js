@@ -3,9 +3,12 @@ import Footer from "./components/Footer.jsx";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Navbar/>
+      <div className="h-screen text-black">
+        Home
+      </div>
       <Footer/>
-    </div>
+    </>
   );
 }

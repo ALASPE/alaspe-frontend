@@ -5,7 +5,7 @@ export default function Promociones() {
   return (
     <>
       <Navbar/>
-      <div>
+      <div className="bg-white h-screen text-black">
         Promociones
       </div>
       <Footer/>

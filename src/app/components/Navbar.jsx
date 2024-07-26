@@ -26,7 +26,7 @@ export default function App() {
           <li>Tasa de interés mensual de 1%</li>
         </ul>
       </div>
-      <div className="bg-white flex flex-row justify-between px-3 py-3 items-center text-[#0089b7]">
+      <div className="flex flex-row justify-between px-3 py-3 items-center text-[#0089b7]">
         <div>
           <Link href="/">
             <Image src="/logo.svg" alt="Logo" width={250} height={250}/>
@@ -136,7 +136,7 @@ const NavContainer = styled.nav`
     a{
       font-size: 2rem;
       margin-top: 1rem;
-      color: white;
+      color:  #0089b7;
     }
   }
   .burguer{

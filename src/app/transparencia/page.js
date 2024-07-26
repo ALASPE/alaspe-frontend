@@ -5,7 +5,7 @@ export default function Transparencia() {
   return (
     <>
       <Navbar/>
-      <div>
+      <div className="bg-white h-screen text-black">
         Transparencia
       </div>
       <Footer/>

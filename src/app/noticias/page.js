@@ -5,7 +5,7 @@ export default function Noticias() {
   return (
     <>
       <Navbar/>
-      <div>
+      <div className="bg-white h-screen text-black">
         Noticias
       </div>
       <Footer/>
